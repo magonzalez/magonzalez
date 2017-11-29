@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>My crazy noisy farm!</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        .scenery {
+            width: 100vw;
+            height: 100vh;
+        }
+        .animal {
+            zindex: 1;
+            position:absolute;
+            bottom:30px;
+            max-width:25vw;
+        }
+        .horse {
+            right: 50px;
+        }
+        .cow {
+            left: 50px;
+        }
+        .pig {
+            left: 25vw;
+        }
+        .rooster {
+            left: 50vw;
+        }
+    </style>
+</head>
+<body>
+    <img class="scenery" src="images/scenery.jpg" />
+    <img class="animal horse" onclick="playSound('horse')" src="images/horse.png" />
+    <img class="animal cow" onclick="playSound('cow')" src="images/cow.png" />
+    <img class="animal rooster" onclick="playSound('rooster')" src="images/rooster.png" />
+    <img class="animal pig" onclick="playSound('pig')" src="images/pig.png" />
+    <audio data-key="horse" src="audio/horse.mp3" />
+    <audio data-key="cow" src="audio/cow.mp3" />
+    <audio data-key="rooster" src="audio/rooster.mp3" />
+    <audio data-key="pig" src="audio/pig.mp3" />
+    <script type="text/javascript">
+        function playSound(type) {
+            var media = document.querySelector(`audio[data-key="${type}"]`);
+
+            media.setCuirrentTime = 0;
+            media.play();
+        }
+
+    </script>
+</body>
+</html>
